@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Velocity Gaming</title>
+  <meta name="description" content="Velocity Gaming - Gaming news, game updates, tips and more.">
+  <meta name="theme-color" content="#0b0b12">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0b0b12;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: #11111b;
+      border-bottom: 1px solid #252535;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 500px;
+      padding: 80px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 30%, #14344b 0%, transparent 35%),
+        radial-gradient(circle at 20% 80%, #25133b 0%, transparent 35%),
+        #0b0b12;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .tag {
+      color: #00e5ff;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 10vw, 85px);
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 550px;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #00e5ff;
+      color: #071014;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 7px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 7%;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .section-title span {
+      color: #00e5ff;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      background: #151521;
+      border: 1px solid #252535;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      border-color: #00e5ff;
+      transform: translateY(-4px);
+    }
+
+    .category .icon {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .category h3 {
+      margin-bottom: 5px;
+    }
+
+    .category p {
+      color: #888;
+      font-size: 13px;
+    }
+
+    /* GAMES */
+    .games {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .game-card {
+      background: #151521;
+      border: 1px solid #252535;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+      border-color: #00e5ff;
+    }
+
+    .game-image {
+      height: 170px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 55px;
+      background: linear-gradient(135deg, #172b3b, #24162f);
+    }
+
+    .game-info {
+      padding: 20px;
+    }
+
+    .game-info h3 {
+      margin-bottom: 7px;
+    }
+
+    .game-info p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* NEWS */
+    .news {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .news-card {
+      background: #151521;
+      border: 1px solid #252535;
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .news-card small {
+      color: #00e5ff;
+    }
+
+    .news-card h3 {
+      margin: 10px 0;
+    }
+
+    .news-card p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 35px 7%;
+      background: #08080d;
+      border-top: 1px solid #252535;
+      color: #777;
+    }
+
+    footer strong {
+      color: #00e5ff;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      header {
+        padding: 15px 5%;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 450px;
+        padding: 60px 5%;
+      }
+
+      section {
+        padding: 45px 5%;
+      }
+
+      .categories,
+      .games,
+      .news {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">VELO<span>CITY</span></div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#games">Games</a>
+      <a href="#news">News</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="tag">WELCOME TO THE NEXT LEVEL</div>
+
+        <h1>
+          PLAY.<br>
+          <span>LEVEL UP.</span>
+        </h1>
+
+        <p>
+          Welcome to Velocity Gaming — your place for gaming news,
+          updates, tips, tricks and everything gamers love.
+        </p>
+
+        <a href="#games" class="button">EXPLORE GAMES →</a>
+
+      </div>
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section>
+      <h2 class="section-title">
+        Gaming <span>Categories</span>
+      </h2>
+
+      <div class="categories">
+
+        <div class="category">
+          <div class="icon">📱</div>
+          <h3>Mobile Gaming</h3>
+          <p>Discover the latest mobile games.</p>
+        </div>
+
+        <div class="category">
+          <div class="icon">💻</div>
+          <h3>PC Gaming</h3>
+          <p>PC games, hardware and updates.</p>
+        </div>
+
+        <div class="category">
+          <div class="icon">🎮</div>
+          <h3>Console Gaming</h3>
+          <p>PlayStation, Xbox and more.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- GAMES -->
+    <section id="games">
+
+      <h2 class="section-title">
+        Featured <span>Games</span>
+      </h2>
+
+      <div class="games">
+
+        <div class="game-card">
+          <div class="game-image">🔫</div>
+
+          <div class="game-info">
+            <h3>Free Fire</h3>
+            <p>
+              Battle royale action, characters,
+              weapons and competitive gameplay.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="game-card">
+          <div class="game-image">🎯</div>
+
+          <div class="game-info">
+            <h3>Call of Duty Mobile</h3>
+            <p>
+              Multiplayer and battle royale
+              gaming on your phone.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="game-card">
+          <div class="game-image">🚗</div>
+
+          <div class="game-info">
+            <h3>GTA</h3>
+            <p>
+              Explore the world of Grand Theft Auto
+              and its legendary games.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEWS -->
+    <section id="news">
+
+      <h2 class="section-title">
+        Latest <span>Gaming News</span>
+      </h2>
+
+      <div class="news">
+
+        <article class="news-card">
+          <small>GAMING</small>
+          <h3>Welcome to Velocity Gaming</h3>
+          <p>
+            Your new gaming destination for news,
+            guides, updates and gaming content.
+          </p>
+        </article>
+
+
+        <article class="news-card">
+          <small>MOBILE</small>
+          <h3>Mobile Gaming Is Growing</h3>
+          <p>
+            Smartphones are becoming powerful
+            gaming machines for players everywhere.
+          </p>
+        </article>
+
+
+        <article class="news-card">
+          <small>COMMUNITY</small>
+          <h3>Level Up Together</h3>
+          <p>
+            Follow Velocity for more gaming content
+            and updates.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <strong>Velocity Gaming</strong>.
+      All rights reserved.
+    </p>
+  </footer>
+
+
+  <script>
+    // Simple welcome message
+    console.log("Welcome to Velocity Gaming!");
+  </script>
+
+</body>
+  </html>
